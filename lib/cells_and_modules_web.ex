@@ -24,14 +24,20 @@ defmodule CellsAndModulesWeb do
       import Plug.Conn
       import CellsAndModulesWeb.Gettext
       alias CellsAndModulesWeb.Router.Helpers, as: Routes
+
+      def render_view(%Plug.Conn{} = conn, view, assigns \\ []) do
+        conn
+        |> put_view(view)
+        |> render("template.html", assigns)
+      end
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/cells_and_modules_web/templates",
-        namespace: CellsAndModulesWeb
+        root: Path.dirname(__ENV__.file),
+        path: ""
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]

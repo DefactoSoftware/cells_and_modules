@@ -1,7 +1,9 @@
 defmodule CellsAndModulesWeb.PageController do
   use CellsAndModulesWeb, :controller
 
+  alias CellsAndModulesWeb.PageView
+
   def index(conn, _params) do
-    render(conn, "index.html")
+    render_view(conn, PageView)
   end
 end
