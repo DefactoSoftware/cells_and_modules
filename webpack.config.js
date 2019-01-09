@@ -3,6 +3,7 @@ const glob = require("glob");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = (env, options) => ({
@@ -13,13 +14,13 @@ module.exports = (env, options) => ({
     ]
   },
   entry: {
-    "./js/app.js": ["./js/app.js"].concat(
-      glob.sync("../lib/cells_and_modules_web/views/**/*.css")
+    app: ["./assets/js/app.js"].concat(
+      glob.sync("./lib/cells_and_modules_web/views/**/*.css")
     )
   },
   output: {
-    filename: "app.js",
-    path: path.resolve(__dirname, "../priv/static/js")
+    filename: "js/[name].js",
+    path: path.resolve(__dirname, "priv/static")
   },
   module: {
     rules: [
@@ -37,8 +38,8 @@ module.exports = (env, options) => ({
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(["../priv/static"]),
-    new MiniCssExtractPlugin({ filename: "../css/app.css" }),
-    new CopyWebpackPlugin([{ from: "static/", to: "../" }])
+    new CleanWebpackPlugin(["priv/static"]),
+    new MiniCssExtractPlugin({ filename: "css/[name].css" }),
+    new CopyWebpackPlugin([{ from: "./assets/static/", to: "./" }])
   ]
 });
