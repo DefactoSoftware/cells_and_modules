@@ -39,6 +39,14 @@ defmodule CellsAndModulesWeb do
         root: Path.dirname(__ENV__.file),
         path: ""
 
+      use ExCSSModules.View,
+        namespace: CellsAndModulesWeb,
+        # embed_stylesheet: Mix.env() == :prod,
+        stylesheet:
+          __ENV__.file
+          |> Path.dirname()
+          |> Path.join("./style.css")
+
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
 

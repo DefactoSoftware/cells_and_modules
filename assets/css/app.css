@@ -1,3 +1,17 @@
-/* This file is for your main application css. */
+body {
+  color: #000000;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.6;
+}
 
-@import "./phoenix.css";
+img {
+  max-width: 100%;
+}
+
+:global(.logo) {
+  display: block;
+  width: 400px;
+  margin: 30px auto;
+}

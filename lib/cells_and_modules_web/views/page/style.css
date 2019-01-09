@@ -1,14 +1,20 @@
-.phx-hero {
-  text-align: center;
-  border-bottom: 1px solid #e3e3e3;
+.hero {
   background: #eee;
+  border-bottom: 1px solid #e3e3e3;
   border-radius: 6px;
-  padding: 3em;
-  margin-bottom: 3rem;
-  font-weight: 200;
   font-size: 120%;
+  font-weight: 200;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  padding: 3em;
+  text-align: center;
+  width: 800px;
 }
 
-.phx-hero p {
-  margin: 0;
+.hero > *:first-child {
+  margin-top: 0;
+}
+
+.hero > *:last-child {
+  margin-bottom: 0;
 }

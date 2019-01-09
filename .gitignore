@@ -1,5 +1,9 @@
 .DS_Store
 
+# Created by CSS Modules.
+/assets/**/*.css.json
+/lib/**/*.css.json
+
 # The directory Mix will write compiled artifacts to.
 /_build/
 
