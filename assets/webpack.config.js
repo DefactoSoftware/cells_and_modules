@@ -3,7 +3,7 @@ const glob = require("glob");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = (env, options) => ({
   optimization: {
@@ -37,6 +37,7 @@ module.exports = (env, options) => ({
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(["../priv/static"]),
     new MiniCssExtractPlugin({ filename: "../css/app.css" }),
     new CopyWebpackPlugin([{ from: "static/", to: "../" }])
   ]

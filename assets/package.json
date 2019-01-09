@@ -1,6 +1,8 @@
 {
-  "repository": {},
+  "name": "cells_and_modules",
+  "description": "Playground to get ex_cell, cell.js and CSS Modules to play nice together.",
   "license": "MIT",
+  "repository": {},
   "scripts": {
     "deploy": "webpack --mode production",
     "watch": "webpack --mode development --watch"
@@ -13,6 +15,7 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.0",
+    "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.5.0",
     "css-loader": "^0.28.10",
     "mini-css-extract-plugin": "^0.4.0",
