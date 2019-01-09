@@ -32,6 +32,7 @@ defmodule CellsAndModules.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:ex_cell, "~> 0.0.12"},
       {:ex_css_modules, "~> 0.0.5"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},

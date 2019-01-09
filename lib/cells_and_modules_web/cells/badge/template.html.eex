@@ -1,0 +1,3 @@
+<%= container(tag: :span) do %>
+  <%= @children %>
+<% end %>

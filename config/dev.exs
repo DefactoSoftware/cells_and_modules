@@ -51,6 +51,7 @@ config :cells_and_modules, CellsAndModulesWeb.Endpoint,
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
+      ~r{lib/cells_and_modules_web/cells/.*(ex|eex)$},
       ~r{lib/cells_and_modules_web/views/.*(ex|eex)$}
     ]
   ]

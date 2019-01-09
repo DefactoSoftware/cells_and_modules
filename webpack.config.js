@@ -15,6 +15,7 @@ module.exports = (env, options) => ({
   },
   entry: {
     app: ["./assets/js/app.js"].concat(
+      glob.sync("./lib/cells_and_modules_web/cells/**/*.css"),
       glob.sync("./lib/cells_and_modules_web/views/**/*.css")
     )
   },
@@ -31,10 +32,6 @@ module.exports = (env, options) => ({
           loader: "babel-loader"
         }
       },
-      // {
-      //   test: /\.css$/,
-      //   use: [MiniCssExtractPlugin.loader, "css-loader"]
-      // }
       {
         test: /\.css$/,
         use: [
