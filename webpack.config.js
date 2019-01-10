@@ -15,8 +15,7 @@ module.exports = (env, options) => ({
   },
   entry: {
     app: ["./assets/js/app.js"].concat(
-      glob.sync("./lib/cells_and_modules_web/cells/**/*.css"),
-      glob.sync("./lib/cells_and_modules_web/cells/**/*.js"),
+      glob.sync("./lib/cells_and_modules_web/views/**/*.js"),
       glob.sync("./lib/cells_and_modules_web/views/**/*.css")
     )
   },

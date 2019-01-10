@@ -39,10 +39,6 @@ defmodule CellsAndModulesWeb do
         root: Path.dirname(__ENV__.file),
         path: ""
 
-      use ExCell.Cell,
-        namespace: CellsAndModulesWeb,
-        adapter: ExCell.Adapters.CellJS
-
       use ExCSSModules.View,
         namespace: CellsAndModulesWeb,
         # embed_stylesheet: Mix.env() == :prod,
@@ -60,10 +56,6 @@ defmodule CellsAndModulesWeb do
       import CellsAndModulesWeb.ErrorHelpers
       import CellsAndModulesWeb.Gettext
       alias CellsAndModulesWeb.Router.Helpers, as: Routes
-
-      def class_name do
-        name() |> class_name()
-      end
     end
   end
 
